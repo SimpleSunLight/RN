@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 import MainPage from './components/index';
 import {
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 

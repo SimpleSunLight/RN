@@ -650,7 +650,7 @@ babel-core@^6.0.0, babel-core@^6.24.1, babel-core@^6.26.0, babel-core@^6.7.2:
     babel-code-frame "^6.26.0"
     babel-generator "^6.26.0"
     babel-helpers "^6.24.1"
-    babel-messages "^6.23.0"
+    babel-message "^6.23.0"
     babel-register "^6.26.0"
     babel-runtime "^6.26.0"
     babel-template "^6.26.0"
@@ -671,7 +671,7 @@ babel-generator@^6.18.0, babel-generator@^6.26.0:
   version "6.26.1"
   resolved "http://registry.npm.taobao.org/babel-generator/download/babel-generator-6.26.1.tgz#1844408d3b8f0d35a404ea7ac180f087a601bd90"
   dependencies:
-    babel-messages "^6.23.0"
+    babel-message "^6.23.0"
     babel-runtime "^6.26.0"
     babel-types "^6.26.0"
     detect-indent "^4.0.0"
@@ -776,7 +776,7 @@ babel-helper-replace-supers@^6.24.1:
   resolved "http://registry.npm.taobao.org/babel-helper-replace-supers/download/babel-helper-replace-supers-6.24.1.tgz#bf6dbfe43938d17369a213ca8a8bf74b6a90ab1a"
   dependencies:
     babel-helper-optimise-call-expression "^6.24.1"
-    babel-messages "^6.23.0"
+    babel-message "^6.23.0"
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
     babel-traverse "^6.24.1"
@@ -798,7 +798,7 @@ babel-jest@22.4.3, babel-jest@^22.4.3:
 
 babel-messages@^6.23.0:
   version "6.23.0"
-  resolved "http://registry.npm.taobao.org/babel-messages/download/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
+  resolved "http://registry.npm.taobao.org/babel-message/download/babel-message-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
   dependencies:
     babel-runtime "^6.22.0"
 
@@ -911,7 +911,7 @@ babel-plugin-transform-es2015-classes@^6.5.0, babel-plugin-transform-es2015-clas
     babel-helper-function-name "^6.24.1"
     babel-helper-optimise-call-expression "^6.24.1"
     babel-helper-replace-supers "^6.24.1"
-    babel-messages "^6.23.0"
+    babel-message "^6.23.0"
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
     babel-traverse "^6.24.1"
@@ -1210,7 +1210,7 @@ babel-traverse@^6.18.0, babel-traverse@^6.24.1, babel-traverse@^6.26.0:
   resolved "http://registry.npm.taobao.org/babel-traverse/download/babel-traverse-6.26.0.tgz#46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee"
   dependencies:
     babel-code-frame "^6.26.0"
-    babel-messages "^6.23.0"
+    babel-message "^6.23.0"
     babel-runtime "^6.26.0"
     babel-types "^6.26.0"
     babylon "^6.18.0"

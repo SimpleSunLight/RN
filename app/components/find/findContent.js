@@ -8,10 +8,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  FlatList,
-  TouchableHighlight,
-  Image
+  View
 } from 'react-native';
 
 export default class FindContent extends Component {

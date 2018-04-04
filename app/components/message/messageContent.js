@@ -8,17 +8,14 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  FlatList,
-  TouchableHighlight,
-  Image
+  View
 } from 'react-native';
 
-export default class HomeContent extends Component {
+export default class MessageContent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>！这是首页</Text>
+        <Text>！这是消息</Text>
       </View>
     );
   }

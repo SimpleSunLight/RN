@@ -13,13 +13,13 @@ import {
   Image,
 } from 'react-native';
 
-import HomeContent from './homeContent';
-import FindContent from './findContent';
-import MessageContent from './messageContent';
-import MineContent from './mineContent';
+import HomeContent from './home/homeContent';
+import FindContent from './find/findContent';
+import MessageContent from './message/messageContent';
+import MineContent from './mine/mineContent';
 
 class Home extends Component {
-  static navigationOptions = ({navigation}) => ({
+  static navigationOptions = {
     tabBarLabel: '首页',
     headerTitle: () => (
       <View style={styles.headerWrapper}>
@@ -32,9 +32,9 @@ class Home extends Component {
       <Image
         source={focused ? require('../images/clickheader.png') : require('../images/header.png')}
         style={{ width: 26, height: 26, tintColor: tinColor }}
-      />  
+      />
     ),
-  });
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -64,7 +64,7 @@ class Find extends Component {
   render() {
     return (
       <View style={styles.container}>
-         <FindContent />    
+         <FindContent />
       </View>
     );
   }
@@ -90,7 +90,7 @@ class Message extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-       <MessageContent />
+        <MessageContent />
       </View>
     );
   }
@@ -183,25 +183,26 @@ const MainPage = TabNavigator(
     backBehavior: 'none',
   });
 
-const Navigator = StackNavigator(  
-  {  
+const Navigator = StackNavigator(
+  {
     MainPage:{
       screen:MainPage,
     },
-  },  
-  {  
-    navigationOptions:{ 
-      headerBackTitle:true,  
-      headerTintColor:'#333333',  
-      showIcon:true,  
-      swipeEnabled:false,  
+  },
+  {
+    navigationOptions:{
+      headerBackTitle:true,
+      headerTintColor:'#333333',
+      showIcon:true,
+      swipeEnabled:false,
       animationEnabled:false,
       headerTitleStyle: {
         alignSelf: 'center',
         textAlign: 'center'
       }
-    },    
+    },
     mode:'card',
     initialRouteName: 'MainPage',
-  });  
+  });
+
 module.exports = Navigator;
