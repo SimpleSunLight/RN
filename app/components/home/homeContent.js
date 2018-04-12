@@ -12,7 +12,7 @@ import {
   Dimensions,
   Image
 } from 'react-native';
-import Swiper from 'react-native-swiper2';
+import Swiper from 'react-native-swiper';
 
 const { width, height } = Dimensions.get(('window'));
 
@@ -32,13 +32,13 @@ export default class HomeContent extends Component {
     return (
       <Swiper
         horizontal={true}
-        // removeClippedSubviews={false}
-        autoplay={true}
+        removeClippedSubviews={false}
         showsPagination={true}
         paginationStyle={styles.paginationStyle}
         renderPagination={renderPagination}
-        activeDot={<View style={{backgroundColor: '#007aff', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
-        dot={<View style={{backgroundColor:'rgba(0,0,0,.2)', width: 8, height: 8,borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
+        index={0}
+        dotStyle={{ backgroundColor: 'rgba(0,0,0,.2)', width: 6, height: 6 }}
+        activeDotStyle={{ backgroundColor: 'rgba(0,0,0,.5)', width: 6, height: 6 }}
       >
         <View
           style={styles.slide}

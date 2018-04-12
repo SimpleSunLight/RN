@@ -11,34 +11,70 @@ import {
   Text,
   View,
   Image,
+  Button,
+  TouchableHighlight
 } from 'react-native';
 
-import HomeContent from './home/homeContent';
-import FindContent from './find/findContent';
-import MessageContent from './message/messageContent';
-import MineContent from './mine/mineContent';
+import HomeContent from './home/HomeContent';
+import FindContent from './find/FindContent';
+import MessageContent from './message/MessageContent';
+import MineContent from './mine/MineContent';
+import Login from './login/index';
 
 class Home extends Component {
-  static navigationOptions = {
-    tabBarLabel: '首页',
-    headerTitle: () => (
-      <View style={styles.headerWrapper}>
-        <Text
-          adjustsFontSizeToFit
-          style={styles.headerText}>网易</Text>
-      </View>
-    ),
-    tabBarIcon: ({ focused, tinColor }) => (
-      <Image
-        source={focused ? require('../images/clickheader.png') : require('../images/header.png')}
-        style={{ width: 26, height: 26, tintColor: tinColor }}
-      />
-    ),
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+
+    return {
+      tabBarLabel: '首页',
+      headerLeft: (
+        <TouchableHighlight
+          style={{ alignItems: 'center', justifyContent: 'center'}}
+          onPress={() => navigation.navigate('MyModal')}
+        >
+          <Image
+            source={require('../images/mine.png')}
+            style={{ width: 26, height: 26, marginLeft: 20 }}
+          />
+        </TouchableHighlight>
+      ),
+      headerRight: (
+        <View>
+          <Image
+            source={require('../images/qrcode.png')}
+            style={{ width: 26, height: 26, marginRight: 20 }}
+          />
+        </View>
+      ),
+      headerTitle: () => (
+        <View style={styles.headerWrapper}>
+          <Text
+            adjustsFontSizeToFit
+            style={styles.headerText}>网易</Text>
+        </View>
+      ),
+      tabBarIcon: ({ focused, tinColor }) => (
+        <Image
+          source={focused ? require('../images/clickheader.png') : require('../images/header.png')}
+          style={{ width: 26, height: 26, tintColor: tinColor }}
+        />
+      ),
+    }
   };
   render() {
     return (
       <View style={styles.container}>
         <HomeContent />
+      </View>
+    );
+  }
+}
+
+class ModalScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Login />
       </View>
     );
   }
@@ -70,7 +106,7 @@ class Find extends Component {
   }
 }
 
-class Message extends React.Component {
+class Message extends Component {
   static navigationOptions = {
     tabBarLabel: '消息',
     headerTitle: () => (
@@ -96,7 +132,7 @@ class Message extends React.Component {
   }
 }
 
-class Mine extends React.Component {
+class Mine extends Component {
   static navigationOptions = {
     tabBarLabel: '我的',
     headerTitle: () => (
@@ -130,7 +166,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   headerWrapper: {
-    flex: 1
+    flex: 1,
   },
   headerText: {
     textAlign: 'center',
@@ -187,7 +223,7 @@ const Navigator = StackNavigator(
   {
     MainPage:{
       screen:MainPage,
-    },
+    }
   },
   {
     navigationOptions:{
@@ -205,4 +241,19 @@ const Navigator = StackNavigator(
     initialRouteName: 'MainPage',
   });
 
-module.exports = Navigator;
+const RootStack = StackNavigator(
+  {
+    Main: {
+      screen: Navigator,
+    },
+    MyModal: {
+      screen: ModalScreen,
+    },
+  },
+  {
+    mode: 'card',
+    headerMode: 'none',
+  }
+);
+
+module.exports = RootStack;
