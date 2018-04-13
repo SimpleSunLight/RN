@@ -42,7 +42,7 @@ export default class LoginActivity extends Component {
 	          onChangeText={(text) => {
 	        	  this.password = text;
 	 				}}/>
-	        <LoginButton name='登录' onPressCallback={()=> alert('HELlO')}/>
+	        <LoginButton name='登录' onPressCallback={()=> alter('Hello')}/>
 	        <Text style={{color:"#4A90E2",textAlign:'center',marginTop:10}} >忘记密码？</Text>
 	      </View>
 	    </View>

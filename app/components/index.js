@@ -12,11 +12,12 @@ import {
   View,
   Image,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
 
 import HomeContent from './home/HomeContent';
 import FindContent from './find/FindContent';
+import HomeDetails  from './home/HomeDetails';
 import MessageContent from './message/MessageContent';
 import MineContent from './mine/MineContent';
 import Login from './login/index';
@@ -24,27 +25,31 @@ import Login from './login/index';
 class Home extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
-
     return {
       tabBarLabel: '首页',
       headerLeft: (
         <TouchableHighlight
-          style={{ alignItems: 'center', justifyContent: 'center'}}
+          underlayColor={'white'} 
+          style={{ marginLeft: 20 }}
           onPress={() => navigation.navigate('MyModal')}
         >
           <Image
             source={require('../images/mine.png')}
-            style={{ width: 26, height: 26, marginLeft: 20 }}
+            style={{ width: 26, height: 26 }}
           />
         </TouchableHighlight>
       ),
       headerRight: (
-        <View>
+        <TouchableHighlight
+          underlayColor={'white'} 
+          style={{ marginRight: 20 }}
+          onPress={() => alert('Hello')}
+        >
           <Image
             source={require('../images/qrcode.png')}
-            style={{ width: 26, height: 26, marginRight: 20 }}
+            style={{ width: 26, height: 26 }}
           />
-        </View>
+        </TouchableHighlight>
       ),
       headerTitle: () => (
         <View style={styles.headerWrapper}>
@@ -161,8 +166,6 @@ class Mine extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#fff',
   },
   headerWrapper: {
@@ -249,6 +252,9 @@ const RootStack = StackNavigator(
     MyModal: {
       screen: ModalScreen,
     },
+    HomeDetails: {
+      screen: HomeDetails,
+    }
   },
   {
     mode: 'card',
