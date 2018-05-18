@@ -15,7 +15,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import HomeContent from './home/HomeContent';
+// import HomeContent from './home/HomeContent';
 import FindContent from './find/FindContent';
 import HomeDetails  from './home/HomeDetails';
 import MessageContent from './message/MessageContent';
@@ -69,7 +69,6 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HomeContent />
       </View>
     );
   }

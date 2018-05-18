@@ -26,7 +26,6 @@ export default class LoginActivity extends Component {
     return (
 	    <View style={LoginStyles.loginview}>
 	      <View style={{flexDirection: 'row',height:100,marginTop:1,justifyContent: 'center',alignItems: 'flex-start',}}>
-	        <Image source={require('../../images/mine.png')}/>
 	      </View>
 	      <View style={{marginTop:80}}>
 	        <EditView 
